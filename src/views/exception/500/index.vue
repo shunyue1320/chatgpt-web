@@ -24,7 +24,7 @@ function goHome() {
           <Icon500 class="w-[300px]" />
         </div>
       </header>
-      <NButton type="primary" @click="goHome">
+      <NButton round type="primary" @click="goHome">
         Go to Home
       </NButton>
     </div>

@@ -130,7 +130,7 @@ function handleImportButtonClick(): void {
         <div class="flex-1">
           <NInput v-model:value="avatar" placeholder="" />
         </div>
-        <NButton size="tiny" text type="primary" @click="updateUserInfo({ avatar })">
+        <NButton round size="tiny" text type="primary" @click="updateUserInfo({ avatar })">
           {{ $t('common.save') }}
         </NButton>
       </div>
@@ -139,7 +139,7 @@ function handleImportButtonClick(): void {
         <div class="w-[200px]">
           <NInput v-model:value="name" placeholder="" />
         </div>
-        <NButton size="tiny" text type="primary" @click="updateUserInfo({ name })">
+        <NButton round size="tiny" text type="primary" @click="updateUserInfo({ name })">
           {{ $t('common.save') }}
         </NButton>
       </div>
@@ -148,7 +148,7 @@ function handleImportButtonClick(): void {
         <div class="flex-1">
           <NInput v-model:value="description" placeholder="" />
         </div>
-        <NButton size="tiny" text type="primary" @click="updateUserInfo({ description })">
+        <NButton round size="tiny" text type="primary" @click="updateUserInfo({ description })">
           {{ $t('common.save') }}
         </NButton>
       </div>
@@ -159,7 +159,7 @@ function handleImportButtonClick(): void {
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.chatHistory') }}</span>
 
         <div class="flex flex-wrap items-center gap-4">
-          <NButton size="small" @click="exportData">
+          <NButton round size="small" @click="exportData">
             <template #icon>
               <SvgIcon icon="ri:download-2-fill" />
             </template>
@@ -167,7 +167,7 @@ function handleImportButtonClick(): void {
           </NButton>
 
           <input id="fileInput" type="file" style="display:none" @change="importData">
-          <NButton size="small" @click="handleImportButtonClick">
+          <NButton round size="small" @click="handleImportButtonClick">
             <template #icon>
               <SvgIcon icon="ri:upload-2-fill" />
             </template>
@@ -176,7 +176,7 @@ function handleImportButtonClick(): void {
 
           <NPopconfirm placement="bottom" @positive-click="clearData">
             <template #trigger>
-              <NButton size="small">
+              <NButton round size="small">
                 <template #icon>
                   <SvgIcon icon="ri:close-circle-line" />
                 </template>
@@ -192,6 +192,7 @@ function handleImportButtonClick(): void {
         <div class="flex flex-wrap items-center gap-4">
           <template v-for="item of themeOptions" :key="item.key">
             <NButton
+              round
               size="small"
               :type="item.key === theme ? 'primary' : undefined"
               @click="appStore.setTheme(item.key)"
@@ -216,7 +217,7 @@ function handleImportButtonClick(): void {
       </div>
       <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.resetUserInfo') }}</span>
-        <NButton size="small" @click="handleReset">
+        <NButton round size="small" @click="handleReset">
           {{ $t('common.reset') }}
         </NButton>
       </div>

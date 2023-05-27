@@ -66,6 +66,7 @@ function handlePress(event: KeyboardEvent) {
         </header>
         <NInput v-model:value="token" type="password" placeholder="" @keypress="handlePress" />
         <NButton
+          round
           block
           type="primary"
           :disabled="disabled"
