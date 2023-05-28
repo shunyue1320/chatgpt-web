@@ -323,6 +323,7 @@ function handleExport() {
     content: t('chat.exportImageConfirm'),
     positiveText: t('common.yes'),
     negativeText: t('common.no'),
+    style: 'border-radius: 1.5rem;',
     onPositiveClick: async () => {
       try {
         d.loading = true
@@ -380,6 +381,7 @@ function handleClear() {
     content: t('chat.clearChatConfirm'),
     positiveText: t('common.yes'),
     negativeText: t('common.no'),
+    style: 'border-radius: 1.5rem;',
     onPositiveClick: () => {
       chatStore.clearChatByUuid(+uuid)
     },

@@ -52,7 +52,7 @@ function handlePress(event: KeyboardEvent) {
 </script>
 
 <template>
-  <NModal :show="visible" style="width: 90%; max-width: 640px">
+  <NModal :show="visible" class="w-11/12 max-w-screen-sm rounded-3xl">
     <div class="p-10 bg-white rounded dark:bg-slate-800">
       <div class="space-y-4">
         <header class="space-y-2">
@@ -64,7 +64,7 @@ function handlePress(event: KeyboardEvent) {
           </p>
           <Icon403 class="w-[200px] m-auto" />
         </header>
-        <NInput v-model:value="token" type="password" placeholder="" @keypress="handlePress" />
+        <NInput v-model:value="token" :placeholder="$t('common.invitationCodePlaceholder')" round @keypress="handlePress" />
         <NButton
           round
           block
