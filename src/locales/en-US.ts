@@ -27,6 +27,7 @@ export default {
     verify: 'Verify',
     unauthorizedTips: 'Unauthorized, please verify first.',
     stopResponding: 'Stop Responding',
+    invitationCodePlaceholder: 'Please enter the invitation code.',
   },
   chat: {
     newChatButton: 'New Chat',

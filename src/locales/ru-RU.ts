@@ -27,6 +27,7 @@ export default {
     verify: 'Проверить',
     unauthorizedTips: 'Не авторизован, сначала подтвердите свою личность.',
     stopResponding: 'Прекращение отклика',
+    invitationCodePlaceholder: 'Введите код приглашения.',
   },
   chat: {
     newChatButton: 'Новый чат',

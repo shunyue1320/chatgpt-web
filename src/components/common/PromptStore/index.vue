@@ -327,7 +327,7 @@ const dataSource = computed(() => {
 </script>
 
 <template>
-  <NModal v-model:show="show" style="width: 90%; max-width: 900px;" preset="card">
+  <NModal v-model:show="show" style="width: 90%; max-width: 900px; border-radius: 1.5rem;" preset="card">
     <div class="space-y-4">
       <NTabs type="segment">
         <NTabPane name="local" :tab="$t('store.local')">
@@ -335,8 +335,9 @@ const dataSource = computed(() => {
             class="flex gap-3 mb-4"
             :class="[isMobile ? 'flex-col' : 'flex-row justify-between']"
           >
-            <div class="flex items-center space-x-4">
+            <div class="flex flex-wrap items-center space-x-4">
               <NButton
+                round
                 type="primary"
                 size="small"
                 @click="changeShowModal('add')"
@@ -344,12 +345,14 @@ const dataSource = computed(() => {
                 {{ $t('common.add') }}
               </NButton>
               <NButton
+                round
                 size="small"
                 @click="changeShowModal('local_import')"
               >
                 {{ $t('common.import') }}
               </NButton>
               <NButton
+                round
                 size="small"
                 :loading="exportLoading"
                 @click="exportPromptTemplate()"
@@ -358,7 +361,7 @@ const dataSource = computed(() => {
               </NButton>
               <NPopconfirm @positive-click="clearPromptTemplate">
                 <template #trigger>
-                  <NButton size="small">
+                  <NButton round size="small">
                     {{ $t('common.clear') }}
                   </NButton>
                 </template>
@@ -366,7 +369,7 @@ const dataSource = computed(() => {
               </NPopconfirm>
             </div>
             <div class="flex items-center">
-              <NInput v-model:value="searchValue" style="width: 100%" />
+              <NInput v-model:value="searchValue" round style="width: 100%" />
             </div>
           </div>
           <NDataTable
@@ -382,10 +385,10 @@ const dataSource = computed(() => {
               <NThing :title="item.renderKey" :description="item.renderValue" />
               <template #suffix>
                 <div class="flex flex-col items-center gap-2">
-                  <NButton tertiary size="small" type="info" @click="changeShowModal('modify', item)">
+                  <NButton round tertiary size="small" type="info" @click="changeShowModal('modify', item)">
                     {{ t('common.edit') }}
                   </NButton>
-                  <NButton tertiary size="small" type="error" @click="deletePromptTemplate(item)">
+                  <NButton round tertiary size="small" type="error" @click="deletePromptTemplate(item)">
                     {{ t('common.delete') }}
                   </NButton>
                 </div>
@@ -398,8 +401,9 @@ const dataSource = computed(() => {
             {{ $t('store.onlineImportWarning') }}
           </p>
           <div class="flex items-center gap-4">
-            <NInput v-model:value="downloadURL" placeholder="" />
+            <NInput v-model:value="downloadURL" round placeholder="" />
             <NButton
+              round
               strong
               secondary
               :disabled="downloadDisabled"
@@ -416,6 +420,7 @@ const dataSource = computed(() => {
               :key="info.key" :title="info.key"
               :bordered="true"
               embedded
+              style="border-radius: 1rem;"
             >
               <p
                 class="overflow-hidden text-ellipsis whitespace-nowrap"
@@ -425,7 +430,7 @@ const dataSource = computed(() => {
               </p>
               <template #footer>
                 <div class="flex items-center justify-end space-x-4">
-                  <NButton text>
+                  <NButton round text>
                     <a
                       :href="info.url"
                       target="_blank"
@@ -433,7 +438,7 @@ const dataSource = computed(() => {
                       <SvgIcon class="text-xl" icon="ri:link" />
                     </a>
                   </NButton>
-                  <NButton text @click="setDownloadURL(info.downloadUrl) ">
+                  <NButton round text @click="setDownloadURL(info.downloadUrl) ">
                     <SvgIcon class="text-xl" icon="ri:add-fill" />
                   </NButton>
                 </div>
@@ -448,10 +453,11 @@ const dataSource = computed(() => {
   <NModal v-model:show="showModal" style="width: 90%; max-width: 600px;" preset="card">
     <NSpace v-if="modalMode === 'add' || modalMode === 'modify'" vertical>
       {{ t('store.title') }}
-      <NInput v-model:value="tempPromptKey" />
+      <NInput v-model:value="tempPromptKey" round />
       {{ t('store.description') }}
-      <NInput v-model:value="tempPromptValue" type="textarea" />
+      <NInput v-model:value="tempPromptValue" round type="textarea" />
       <NButton
+        round
         block
         type="primary"
         :disabled="inputStatus"
@@ -466,8 +472,10 @@ const dataSource = computed(() => {
         :placeholder="t('store.importPlaceholder')"
         :autosize="{ minRows: 3, maxRows: 15 }"
         type="textarea"
+        round
       />
       <NButton
+        round
         block
         type="primary"
         :disabled="inputStatus"

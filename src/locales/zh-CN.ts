@@ -27,6 +27,7 @@ export default {
     verify: '验证',
     unauthorizedTips: '未经授权，请先进行验证。',
     stopResponding: '停止响应',
+    invitationCodePlaceholder: '请输入邀请码。',
   },
   chat: {
     newChatButton: '新建聊天',
